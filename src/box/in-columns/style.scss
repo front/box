@@ -1,0 +1,17 @@
+.wp-block-cloudblocks-boxes-in-columns {
+  @media (min-width: 600px) {
+    .wp-block-column {
+      flex-basis: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width: 46em) {
+    .wp-block-column {
+      flex-basis: 50%;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
