@@ -8,7 +8,6 @@ import { i18n, editor } from 'wp';
  * Internal dependencies
  */
 import './style.scss';
-import './editor.scss';
 
 const { __ } = i18n;
 
@@ -17,23 +16,14 @@ const { InnerBlocks } = editor;
 /**
  * Constants
  */
-const ALLOWED_BLOCKS = [ 'core/button', 'core/paragraph', 'core/heading' ];
 const TEMPLATE = [
   [ 'core/heading', {
-    level: 1,
+    level: 2,
     align: 'left',
-    placeholder: 'Title...',
+    placeholder: 'Write heading...',
     className: 'wp-block-cloudblocks-box__title',
   } ],
-  [ 'core/paragraph', {
-    align: 'left',
-    placeholder: 'Content...',
-    className: 'wp-block-cloudblocks-box__content',
-  } ],
-  [ 'core/button', {
-    className: 'is-style-squared is-style-outline wp-block-cloudblocks-box__button',
-    align: 'center',
-  } ],
+  [ 'cloudblocks/box-content' ],
 ];
 
 export const name = 'box';
@@ -55,7 +45,6 @@ export const settings = {
     return (
       <div className={ className }>
         <InnerBlocks
-          allowedBlocks={ ALLOWED_BLOCKS }
           template={ TEMPLATE }
           templateLock="all"
         />
