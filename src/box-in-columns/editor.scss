@@ -1,0 +1,18 @@
+.wp-block-cloudblocks-boxes-in-columns {
+  display: block;
+
+  > .editor-inner-blocks > .editor-block-list__layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    > .editor-block-list__block {
+      flex-basis: 100%;
+
+      .wp-block-cloudblocks-box {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  }
+}

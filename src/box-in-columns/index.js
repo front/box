@@ -8,6 +8,7 @@ import { i18n, editor, element, components } from 'wp';
  * Internal dependencies
  */
 import './style.scss';
+import './editor.scss';
 
 const { __ } = i18n;
 
@@ -20,7 +21,6 @@ const { PanelBody, RangeControl } = components;
 /**
  * Constants
  */
-const ALLOWED_BLOCKS = [ 'core/column'];
 const MAX_COLUMNS = 4;
 const MIN_COLUMNS = 2;
 
@@ -28,9 +28,7 @@ const getColumnsTemplate = columns => {
   const cols = [];
 
   for (let i = 0; i < columns; i++) {
-    cols[i] = [ 'core/column', {}, [
-      [ 'cloudblocks/box' ],
-    ] ];
+    cols[i] = [ 'cloudblocks/box' ];
   }
 
   return cols;
@@ -52,12 +50,12 @@ export const settings = {
     },
   },
 
-  supports: {
-    align: [ 'wide', 'full' ],
-  },
-
   edit ({ attributes, setAttributes, className }) {
     const { columns } = attributes;
+    const classes = [
+      className,
+      `has-${columns}-columns`,
+    ].join(' ');
 
     return (
       <Fragment>
@@ -77,9 +75,8 @@ export const settings = {
           </PanelBody>
         </InspectorControls>
 
-        <div className={ `wp-block-columns has-${columns}-columns ${className || ''}` }>
+        <div className={ classes }>
           <InnerBlocks
-            allowedBlocks={ ALLOWED_BLOCKS }
             template={ getColumnsTemplate(columns) }
             templateLock="all"
           />
@@ -91,8 +88,13 @@ export const settings = {
   save ({ attributes, className }) {
     const { columns } = attributes;
 
+    const classes = [
+      className,
+      `has-${columns}-columns`,
+    ].join(' ');
+
     return (
-      <div className={ `wp-block-columns has-${columns}-columns ${className || ''}` }>
+      <div className={ classes }>
         <InnerBlocks.Content />
       </div>
     );

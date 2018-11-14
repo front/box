@@ -1,21 +1,66 @@
 // The class name needs to match the names of the category and block
 .wp-block-cloudblocks-box {
-  border: 1px solid #000;
-  padding: 30px;
+  .wp-block-cloudblocks-box__container {
+    border: 1px solid #000;
+    padding: 30px;
 
- .wp-block-cloudblocks-box__title {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 21px;
-    word-break: break-word;
+    .wp-block-cloudblocks-box__title {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 21px;
+      word-break: break-word;
 
-    @media (min-width: 30em) {
-      font-size: 33.6px;
+      @media (min-width: 30em) {
+        font-size: 33.6px;
+      }
+
+      @media (min-width: 62em){
+        font-size: 35px;
+      }
     }
 
-    @media (min-width: 62em){
-      font-size: 35px;
+    .wp-block-cloudblocks-box__content {
+      margin-bottom: 30px;
+      font-size: 15.4px;
+      word-break: break-word;
+
+      @media (min-width: 46em) {
+        font-size: 18.2px;
+        font-weight: 300;
+      }
+
+      @media (min-width: 62em){
+        font-size: 19.6px;
+      }
+    }
+
+    .wp-block-button {
+      margin-bottom: 0;
+
+      &.is-style-outline .wp-block-button__link {
+        border: 1px solid #000;
+      }
+
+    .wp-block-button__link {
+        // color: #36292a;
+        padding: 10px 15px;
+        line-height: 1.3;
+        white-space: normal;
+        font-family: "Roboto Slab", sans-serif;
+        word-break: break-word;
+        font-size: 17px;
+
+        @media (min-width: 30em) {
+          font-size: 24px;
+        }
+
+        &:hover {
+          // color: #36292a;
+          background-color: #fff59b;
+          transition: 0.3s;
+        }
+      }
     }
   }
 }
