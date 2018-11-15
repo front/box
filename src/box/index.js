@@ -98,6 +98,7 @@ export const settings = {
             <InnerBlocks
               template={ getTemplate(showButton) }
               templateLock="all"
+              templateInsertUpdatesSelection={ false }
             />
           </div>
         </div>

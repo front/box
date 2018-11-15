@@ -79,6 +79,7 @@ export const settings = {
           <InnerBlocks
             template={ getColumnsTemplate(columns) }
             templateLock="all"
+            templateInsertUpdatesSelection={ false }
           />
         </div>
       </Fragment>
