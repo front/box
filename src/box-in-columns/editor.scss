@@ -15,4 +15,30 @@
       }
     }
   }
+
+  .block-library-button__inline-link {
+    width: 100%;
+
+    .editor-url-input {
+      width: calc(100% - 80px);
+
+      input[type=text] {
+        width: 100%;
+      }
+
+      @media (min-width: 600px) {
+        width: calc(100% - 80px);
+
+        input[type=text] {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .wp-block-button {
+    .editor-rich-text__tinymce.mce-content-body {
+      line-height: 1.3;
+    }
+  }
 }
