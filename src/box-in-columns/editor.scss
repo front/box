@@ -18,9 +18,11 @@
 
   .block-library-button__inline-link {
     width: 100%;
+    max-width: 380px;
 
     .editor-url-input {
       width: calc(100% - 80px);
+      max-width: 300px;
 
       input[type=text] {
         width: 100%;
@@ -28,6 +30,7 @@
 
       @media (min-width: 600px) {
         width: calc(100% - 80px);
+        max-width: 300px;
 
         input[type=text] {
           width: 100%;

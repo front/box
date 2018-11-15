@@ -3,17 +3,27 @@ $padding: 16px;
 .wp-block-cloudblocks-boxes-in-columns {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
   .wp-block-cloudblocks-box {
+    flex-basis: 100%;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
     &:last-child {
       padding-right: 0;
     }
+  }
 
-    @media (min-width: 600px) {
-      flex-basis: 100%;
-      padding-left: 0;
-      padding-right: 0;
+  @media (min-width: 46em) {
+    flex-wrap: nowrap;
+
+    .wp-block-cloudblocks-box {
+      flex-basis: 50%;
 
       &:nth-child(odd) {
         padding-left: 0;
@@ -22,9 +32,7 @@ $padding: 16px;
       &:nth-child(2n) {
         padding-right: 0;
       }
-    }
 
-    @media (min-width: 782px) {
       &:not(:first-child) {
         padding-left: $padding;
       }
@@ -33,11 +41,68 @@ $padding: 16px;
         padding-right: $padding;
       }
     }
+  }
 
+  &.has-4-columns {
     @media (min-width: 46em) {
-      flex-basis: 50%;
-      padding-left: $padding;
-      padding-right: $padding;
+      flex-wrap: wrap;
+
+      .wp-block-cloudblocks-box {
+        &:nth-child(odd) {
+          padding-left: 0;
+        }
+
+        &:nth-child(2n) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    @media (min-width: 78em) {
+      flex-wrap: nowrap;
+
+      .wp-block-cloudblocks-box {
+        flex-basis: 50%;
+
+        &:not(:first-child) {
+          padding-left: $padding;
+        }
+
+        &:not(:last-child) {
+          padding-right: $padding;
+        }
+      }
+    }
+  }
+
+  &.has-3-columns {
+    @media (min-width: 46em) {
+      flex-wrap: wrap;
+
+      .wp-block-cloudblocks-box {
+        &:nth-child(2n) {
+          padding-right: 0;
+        }
+
+        &:last-child {
+          padding-left: 0;
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    @media (min-width: 78em) {
+      flex-wrap: nowrap;
+      .wp-block-cloudblocks-box {
+        &:nth-child(2n) {
+          padding-right: $padding;
+        }
+
+        &:last-child {
+          padding-left: $padding;
+          flex-basis: 50%;
+        }
+      }
     }
   }
 }
