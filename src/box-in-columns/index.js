@@ -52,10 +52,6 @@ export const settings = {
 
   edit ({ attributes, setAttributes, className }) {
     const { columns } = attributes;
-    const classes = [
-      className,
-      `has-${columns}-columns`,
-    ].join(' ');
 
     return (
       <Fragment>
@@ -75,7 +71,7 @@ export const settings = {
           </PanelBody>
         </InspectorControls>
 
-        <div className={ classes }>
+        <div className={ className }>
           <InnerBlocks
             template={ getColumnsTemplate(columns) }
             templateLock="all"
@@ -86,16 +82,9 @@ export const settings = {
     );
   },
 
-  save ({ attributes, className }) {
-    const { columns } = attributes;
-
-    const classes = [
-      className,
-      `has-${columns}-columns`,
-    ].join(' ');
-
+  save () {
     return (
-      <div className={ classes }>
+      <div>
         <InnerBlocks.Content />
       </div>
     );
