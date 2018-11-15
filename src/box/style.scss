@@ -3,6 +3,11 @@
   .wp-block-cloudblocks-box__container {
     border: 1px solid #000;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
 
     .wp-block-cloudblocks-box__title {
       margin-top: 0;
@@ -24,6 +29,7 @@
       margin-bottom: 30px;
       font-size: 15.4px;
       word-break: break-word;
+      flex-grow: 1;
 
       @media (min-width: 46em) {
         font-size: 18.2px;
